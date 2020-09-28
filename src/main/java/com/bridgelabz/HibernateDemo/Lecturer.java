@@ -52,4 +52,9 @@ public class Lecturer {
 	public void setQualification(String qualification) {
 		this.qualification = qualification;
 	}
+
+	@Override
+	public String toString() {
+		return "Lecturer [id=" + id + ", name=" + name + ", subject=" + subject + "]";
+	}
 }

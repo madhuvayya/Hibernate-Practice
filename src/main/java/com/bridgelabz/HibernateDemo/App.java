@@ -10,9 +10,10 @@ public class App
     public static void main( String[] args )
     {
         Lecturer lecturer = new Lecturer();
-        lecturer.setId(4);
-        lecturer.setName("Dhanraj");
-        lecturer.setSubject("Physics");
+        //Commented code for accessing the data from database 
+//        lecturer.setId(4);
+//        lecturer.setName("Dhanraj");
+//        lecturer.setSubject("Physics");
         
         Configuration configuration = new Configuration().configure().addAnnotatedClass(Lecturer.class);
         
@@ -21,7 +22,14 @@ public class App
         Session session = sessionFactory.openSession();
         
         Transaction transaction = session.beginTransaction();
-        session.save(lecturer);
+        
+        // save method is used to store the data into database 
+        // session.save(lecturer);
+        
+        lecturer = session.get(Lecturer.class, 10);
+
         transaction.commit();
+        
+        System.out.println(lecturer);
     }
 }
