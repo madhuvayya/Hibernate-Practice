@@ -14,8 +14,7 @@ public class Lecturer {
 	@Column(name="lecturer_id")
 	private int id;
 	
-	@Column(name="lecturer_name")
-	private String name;
+	private Name name;
 	private String subject;
 	
 	@Transient
@@ -29,11 +28,11 @@ public class Lecturer {
 		this.id = id;
 	}
 
-	public String getName() {
+	public Name getName() {
 		return name;
 	}
 
-	public void setName(String name) {
+	public void setName(Name name) {
 		this.name = name;
 	}
 

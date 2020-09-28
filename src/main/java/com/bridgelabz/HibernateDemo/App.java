@@ -9,11 +9,16 @@ public class App
 {
     public static void main( String[] args )
     {
+    	
+    	Name name = new Name();
+    	name.setFirstName("Madhu");
+    	name.setLastName("V");
+    	
         Lecturer lecturer = new Lecturer();
-        //Commented code for accessing the data from database 
-//        lecturer.setId(4);
-//        lecturer.setName("Dhanraj");
-//        lecturer.setSubject("Physics");
+
+        lecturer.setId(4);
+        lecturer.setName(name);
+        lecturer.setSubject("Physics");
         
         Configuration configuration = new Configuration().configure().addAnnotatedClass(Lecturer.class);
         
@@ -24,9 +29,9 @@ public class App
         Transaction transaction = session.beginTransaction();
         
         // save method is used to store the data into database 
-        // session.save(lecturer);
+         session.save(lecturer);
         
-        lecturer = session.get(Lecturer.class, 10);
+//        lecturer = session.get(Lecturer.class, 10);
 
         transaction.commit();
         
