@@ -29,7 +29,7 @@ public class Student {
 //	@OneToMany(mappedBy = "student")
 //	private List<Laptop> laptops = new ArrayList<Laptop>();
 
-	@ManyToMany
+	@ManyToMany(mappedBy = "students")
 	private List<Laptop> laptops = new ArrayList<Laptop>();
 	
 	public int getRollNumber() {
