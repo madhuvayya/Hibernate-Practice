@@ -18,6 +18,8 @@ public class Relation {
 //		student.setLaptop(laptop);
 		student.getLaptops().add(laptop);
 		
+		laptop.getStudents().add(student);
+		
 		Configuration configuration = new Configuration().configure().addAnnotatedClass(Student.class).addAnnotatedClass(Laptop.class);
 		
 		SessionFactory sessionFactory = configuration.buildSessionFactory();
