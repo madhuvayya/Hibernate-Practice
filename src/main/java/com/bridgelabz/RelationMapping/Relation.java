@@ -9,13 +9,14 @@ public class Relation {
 	public static void main(String[] args) {
 		Laptop laptop = new Laptop();
 		laptop.setId(101);
-		laptop.setName("Dell");
+		laptop.setLaptopName("Dell");
 		
 		Student student = new Student();
 		student.setRollNumber(1);
-		student.setName("Madhu");
+		student.setStudentName("Madhu");
 		student.setPercentage(80.0);
-		student.setLaptop(laptop);
+//		student.setLaptop(laptop);
+		student.getLaptops().add(laptop);
 		
 		Configuration configuration = new Configuration().configure().addAnnotatedClass(Student.class).addAnnotatedClass(Laptop.class);
 		

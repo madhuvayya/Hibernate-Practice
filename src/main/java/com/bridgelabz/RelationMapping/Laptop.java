@@ -12,7 +12,7 @@ public class Laptop {
 	private int id;
 	
 	@Column(name="laptop_name")
-	private String name;
+	private String laptopName;
 
 	public int getId() {
 		return id;
@@ -22,16 +22,16 @@ public class Laptop {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getLaptopName() {
+		return laptopName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setLaptopName(String laptopName) {
+		this.laptopName = laptopName;
 	}
 
 	@Override
 	public String toString() {
-		return "Laptop [id=" + id + ", name=" + name + "]";
+		return "Laptop [id=" + id + ", name=" + laptopName + "]";
 	}
 }

@@ -1,9 +1,13 @@
 package com.bridgelabz.RelationMapping;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.OneToMany;
+//import javax.persistence.OneToOne;
 
 @Entity
 public class Student {
@@ -13,13 +17,16 @@ public class Student {
 	private int rollNumber;
 	
 	@Column(name="student_name")
-	private String name;
+	private String studentName;
 	
 	@Column(name="percentage")
 	private double percentage;
 	
-	@OneToOne
-	private Laptop laptop;
+//	@OneToOne
+//	private Laptop laptop;
+	
+	@OneToMany
+	private List<Laptop> laptops = new ArrayList<Laptop>();
 
 	public int getRollNumber() {
 		return rollNumber;
@@ -29,12 +36,12 @@ public class Student {
 		this.rollNumber = rollNumber;
 	}
 
-	public String getName() {
-		return name;
+	public String getStudentName() {
+		return studentName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setStudentName(String studentName) {
+		this.studentName = studentName;
 	}
 
 	public double getPercentage() {
@@ -45,16 +52,24 @@ public class Student {
 		this.percentage = percentage;
 	}
 
-	public Laptop getLaptop() {
-		return laptop;
+//	public Laptop getLaptop() {
+//		return laptop;
+//	}
+//
+//	public void setLaptop(Laptop laptop) {
+//		this.laptop = laptop;
+//	}
+
+	public List<Laptop> getLaptops() {
+		return laptops;
 	}
 
-	public void setLaptop(Laptop laptop) {
-		this.laptop = laptop;
+	public void setLaptops(List<Laptop> laptops) {
+		this.laptops = laptops;
 	}
 
 	@Override
 	public String toString() {
-		return "Student [rollNumber=" + rollNumber + ", name=" + name + ", percentage=" + percentage + "]";
+		return "Student [rollNumber=" + rollNumber + ", name=" + studentName + ", percentage=" + percentage + "]";
 	}
 }
