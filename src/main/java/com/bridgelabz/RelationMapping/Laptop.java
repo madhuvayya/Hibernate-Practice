@@ -3,6 +3,7 @@ package com.bridgelabz.RelationMapping;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Laptop {
@@ -13,6 +14,9 @@ public class Laptop {
 	
 	@Column(name="laptop_name")
 	private String laptopName;
+	
+	@ManyToOne
+	private Student student;
 
 	public int getId() {
 		return id;
@@ -28,6 +32,14 @@ public class Laptop {
 
 	public void setLaptopName(String laptopName) {
 		this.laptopName = laptopName;
+	}
+
+	public Student getStudent() {
+		return student;
+	}
+
+	public void setStudent(Student student) {
+		this.student = student;
 	}
 
 	@Override
